@@ -10,6 +10,6 @@ RUN wget -O dynamodb_local_latest.tar.gz http://s3-us-west-2.amazonaws.com/dynam
     tar zxvf dynamodb_local_latest.tar.gz && \
     rm dynamodb_local_latest.tar.gz
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "DynamoDBLocal.jar", "-dbPath", "/var/dynamodb_data", "-port", "8000"]
+ENTRYPOINT ["/usr/bin/java", "-jar", "DynamoDBLocal.jar", "-dbPath", "/var/dynamodb_data", "-sharedDb", "-port", "8000"]
 
 EXPOSE 8000
